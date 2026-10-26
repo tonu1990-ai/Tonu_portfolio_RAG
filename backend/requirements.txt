@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+chromadb
+fastembed
+langchain-core
+langchain-text-splitters
+groq
+python-dotenv

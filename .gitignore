@@ -1,0 +1,22 @@
+# Python virtual environments
+backend/.venv/
+
+# Python generated files
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+
+# Temporary files
+*.log
+
+# Generated RAG assets
+backend/model_cache/
+backend/vector_db/
