@@ -14,30 +14,49 @@ function App() {
       <Navbar name="Tonu James " />
 
       <main> 
-        <section id="home" className="hero-section">
-          <div className="hero-content">
+        
+        <section id="home" className="hero">
 
-            <p className="hero-label">
-              AI ENGINEERING PORTFOLIO
-            </p>
+          <div className="hero-layout">
 
-            <h1>Hi, I'm Tonu James</h1>
+            {/* LEFT SIDE: Existing introduction */}
+            <div className="hero-intro">
 
-            <h2>Building intelligent systems with AI</h2>
+              <h1>Hi, I'm Tonu James</h1>
 
-            <p className="hero-description">
-              Software engineer with experience in enterprise applications.Exploring practical AI solutions 
-              around Computer vision and Generative AI from research to deployment.
-              
-            </p>
+              <h2>Building intelligent systems with AI</h2>
 
-            <div className="hero-buttons">
-              <a href="#projects">Explore My Projects</a>
-              <a href="#contact">Contact Me</a>
+              <p>
+                Explore my work in Generative AI,
+                Computer Vision and Enterprise AI.
+              </p>
+
+              <div className="hero-buttons">
+                <a href="#projects">
+                  Explore My Projects
+                </a>
+
+                <a href="#contact">
+                  Contact Me
+                </a>
+              </div>
+
+            </div>
+
+            {/* RIGHT SIDE: Professional photograph */}
+            <div className="hero-photo">
+
+              <img
+                src="/tonu-profile.png"
+                alt="Portrait of Tonu James"
+              />
+
             </div>
 
           </div>
+
         </section>
+
 
         <section id="about" className="about-section">
 
