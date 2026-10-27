@@ -2,6 +2,11 @@
 import { useState, useEffect } from 'react'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+const SUGGESTED_QUESTIONS = [
+  "What are Tonu's AI projects areas?",
+  "What is Tonu's educational backround?",
+  "What about Tonu's professional career?"
+]
 
 function Chatbot() {
 
@@ -65,11 +70,9 @@ function Chatbot() {
 
 
 
-  async function handleSubmit(event) {
+  async function sendQuestion(rawQuestion) {
 
-    event.preventDefault()
-
-    const submittedQuestion = question.trim()
+    const submittedQuestion = rawQuestion.trim()
 
     if (!submittedQuestion || isLoading) {
       return
@@ -143,6 +146,10 @@ function Chatbot() {
     }
   }
 
+  function handleSubmit(event) {
+  event.preventDefault()
+  sendQuestion(question)
+  }
 
   return (
     <section id="ai-chatbot" className="portfolio-chatbot">
@@ -175,19 +182,41 @@ function Chatbot() {
 
         <div className="chatbot-messages">
 
-          {messages.length === 0 && (
-            <div className="chatbot-welcome">
-              <p>
-                Hello! I'm an AI assistant for
-                Tonu James's portfolio.
-              </p>
+ 
+      {messages.length === 0 && (
 
-              <p>
-                Ask me about his work, skills,
-                academic research or projects.
-              </p>
-            </div>
-          )}
+        <div className="chatbot-welcome">
+
+          <p>
+            Hello! I'm Tonu's AI assistant.
+          </p>
+
+          <p>
+            What would you like to know about
+            his experience, research or AI projects?
+          </p>
+
+          <div className="chatbot-suggestions">
+
+            {SUGGESTED_QUESTIONS.map((suggestion) => (
+
+              <button
+                key={suggestion}
+                type="button"
+                disabled={isLoading}
+                onClick={() => sendQuestion(suggestion)}
+              >
+                {suggestion}
+              </button>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      )}
+
 
           {messages.map((message, index) => (
 

@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar.jsx'
 import ProjectCard from './components/ProjectCard.jsx'
 import ContactForm from './components/ContactForm.jsx'
-import Chatbot from './components/Chatbot.jsx'
+import FloatingChatbot from './components/FloatingChatbot.jsx'
 
  
 
@@ -196,7 +196,7 @@ function App() {
         </section>
 
 
-      <Chatbot />
+     <FloatingChatbot />
       </main>
 
     </div>
