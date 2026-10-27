@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
@@ -16,6 +16,53 @@ function Chatbot() {
 
   // Store errors
   const [error, setError] = useState('')
+
+  const [backendStatus, setBackendStatus] = useState('checking')
+
+
+  // Wake up the Render backend when the page loads
+  useEffect(() => {
+
+    const controller = new AbortController()
+
+    async function wakeUpBackend() {
+
+      if (!API_BASE_URL) {
+        setBackendStatus('offline')
+        return
+      }
+
+      try {
+        const response = await fetch(
+          `${API_BASE_URL}/health`,
+          {
+            signal: controller.signal
+          }
+        )
+
+        if (!response.ok) {
+          throw new Error('Backend health check failed')
+        }
+
+        setBackendStatus('online')
+
+      } catch (error) {
+
+        // Ignore requests cancelled during component cleanup
+        if (error.name !== 'AbortError') {
+          setBackendStatus('offline')
+        }
+
+      }
+    }
+
+    wakeUpBackend()
+
+    // Cancel the request if the component unmounts
+    return () => controller.abort()
+
+  }, [])
+
 
 
   async function handleSubmit(event) {
@@ -69,6 +116,7 @@ function Chatbot() {
 
       // Convert JSON response into a JavaScript object
       const data = await response.json()
+      setBackendStatus('online')
 
       // Add the AI response to the conversation
       setMessages((previousMessages) => [
@@ -108,6 +156,22 @@ function Chatbot() {
             education, research and AI projects.
           </p>
         </div>
+
+
+        <p
+          className={`chatbot-backend-status ${backendStatus}`}
+          role="status"
+        >
+          {backendStatus === 'checking' &&
+            'Connecting to AI server... This may take a minute after inactivity.'}
+
+          {backendStatus === 'online' &&
+            'AI server connected'}
+
+          {backendStatus === 'offline' &&
+            'Unable to reach the AI server yet. You can still try asking a question.'}
+        </p>
+
 
         <div className="chatbot-messages">
 

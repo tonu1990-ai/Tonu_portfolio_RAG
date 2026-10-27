@@ -655,3 +655,29 @@ main section {
     padding: 12px 15px;
   }
 }
+
+
+/* Render backend connection status */
+
+.chatbot-backend-status {
+  text-align: center;
+  font-size: 13px;
+  padding: 9px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.chatbot-backend-status.checking {
+  color: #92400e;
+  background-color: #fef3c7;
+}
+
+.chatbot-backend-status.online {
+  color: #166534;
+  background-color: #dcfce7;
+}
+
+.chatbot-backend-status.offline {
+  color: #991b1b;
+  background-color: #fee2e2;
+}
