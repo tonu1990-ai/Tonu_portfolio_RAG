@@ -8,17 +8,19 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow our React frontend to communicate with FastAPI
 
+# Allow our local React app and deployed Vercel website
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173",
+        "https://tonu-portfolio-rag.vercel.app"
     ],
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"]
 )
+
 
 
 # Existing GET endpoint
