@@ -1,72 +1,28 @@
-# Career Goals – Tonu James
+# Career Goals and Role Interests — Tonu James
 
-## Overall Career Objective
+## Main objective
+Tonu is looking to transition from professional enterprise software development into applied AI and AI engineering, supported by a completed MSc in Human-Centred Artificial Intelligence and recent hands-on AI projects. His software engineering background is a transferable strength; his academic and personal AI work is distinguished from previous commercial employment.
 
-Tonu James is seeking to transition from established enterprise software engineering experience into an AI engineering role.
+## Three equally relevant career directions
+Tonu is open to **all three** directions below. They are not ranked in priority order.
 
-He holds an MSc in Human-Centred Artificial Intelligence and is currently developing hands-on skills in modern AI application engineering.
+### Generative AI, LLM and RAG engineering
+- Possible roles: Applied AI Engineer, Generative AI Engineer, LLM Application Engineer and relevant Agentic AI Developer roles.
+- Interests: Retrieval-Augmented Generation, embeddings, vector search, API integration, prompt/context design, retrieval evaluation and tool-using LLM workflows.
+- Completed evidence: Deployed RAG portfolio at https://tonu-james.vercel.app/ using FastAPI, FastEmbed, ChromaDB and Groq.
+- Continuing learning: LangChain (intermediate), LangGraph, MCP and agentic AI architectures.
 
-Tonu is open to opportunities across **three equally important career directions**:
+### Computer Vision and Edge AI
+- Possible roles: Applied Computer Vision Engineer, Edge AI Engineer and ML/AI Engineer roles involving video and model deployment.
+- Interests: Object detection, edge inference, GStreamer, ONNX Runtime, Raspberry Pi, Docker, model delivery and performance optimisation.
+- Completed evidence: MSc thesis evaluating YOLOX fairness and a functioning Raspberry Pi YOLO GUI deployed through a reusable GitHub Actions model/app CD framework.
+- Future use cases: PPE-related or workplace-safety visual monitoring and manufacturing quality inspection. These are intended applications, **not completed commercial installations**.
 
-1. Generative AI and LLM Engineering
-2. Computer Vision and Edge AI
-3. Enterprise AI and SAP Generative AI
+### Enterprise AI and SAP-related Generative AI
+- Possible roles: Enterprise AI Engineer, AI application/integration engineer, and SAP Generative AI development roles.
+- Interests: Adding AI capabilities to existing enterprise applications, integration with APIs/data sources, customer-focused engineering and maintainability.
+- Completed evidence: Enterprise software experience at SAP Labs India, including integrations and team leadership; separate hands-on RAG and Edge AI applications.
+- Continuing learning: SAP Generative AI Developer certification preparation; the certification is **not yet earned**.
 
-None is designated as his exclusive or highest-priority track.
-
-His hands-on evidence includes a deployed portfolio RAG chatbot and a functioning Docker-deployed Raspberry Pi object-detection application.
-
-## Generative AI and LLM Engineering
-
-### Target Roles
-
-Generative AI Engineer, LLM Application Engineer, AI Engineer, and Agentic AI Developer.
-
-### Areas of Interest
-
-- Retrieval-Augmented Generation (RAG), semantic search, embeddings, and vector databases
-- LLM application architecture, integration, prompt engineering, and evaluation
-- Agentic workflows, tool integration, and application reliability
-- Practical deployment and maintenance of AI-powered software
-
-These areas combine practical projects and ongoing learning.
-
-They are not presented as extensive prior professional production experience with LLM systems.
-
-## Computer Vision and Edge AI
-
-### Target Roles
-
-Computer Vision Engineer, Applied AI Engineer, Edge AI Engineer, and relevant Machine Learning Engineer positions.
-
-### Areas of Interest
-
-- Object detection and video processing, including YOLO-based workflows
-- Raspberry Pi and other resource-constrained inference environments
-- OpenCV, GStreamer, ONNX Runtime, PyTorch, Docker, and related tooling
-- Real-time monitoring, automated visual inspection, and model optimization
-
-Tonu's interest is supported by his M.Tech specialization, MSc pedestrian-detection research, and practical Edge AI project work.
-
-Industrial quality inspection and safety monitoring are future application interests rather than claimed completed industrial deployments.
-
-## Enterprise AI and SAP Generative AI
-
-### Target Roles
-
-Enterprise AI Engineer, SAP Generative AI Developer, and AI application/integration roles involving enterprise systems.
-
-### Areas of Interest
-
-- Integrating AI with existing enterprise applications and workflows
-- Customer-focused AI solution development and technical problem-solving
-- SAP Generative AI technologies and intelligent business application integration
-- Applying prior SAP engineering and customer-support experience to AI systems
-
-Tonu is preparing for the SAP Certified – SAP Generative AI Developer (C_AIG) certification; it is not yet completed.
-
-## Human-Centred and Responsible AI
-
-Tonu aims to consider reliability, fairness, transparency, explainability, and human needs when designing and evaluating AI-based applications.
-
-This perspective is informed by his MSc and research into geographical bias in pedestrian detection.
+## Values in AI work
+Tonu is interested in AI systems that are useful, reliable and transparent. His MSc fairness research and face-similarity explainability study inform his interest in model evaluation, responsible AI and robust software engineering.
