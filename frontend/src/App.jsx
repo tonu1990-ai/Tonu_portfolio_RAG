@@ -4,10 +4,19 @@ import Navbar from './components/Navbar.jsx'
 import ProjectCard from './components/ProjectCard.jsx'
 import ContactForm from './components/ContactForm.jsx'
 import FloatingChatbot from './components/FloatingChatbot.jsx'
-
+import { FaLinkedin, FaGithub } from 'react-icons/fa' 
+import { useState } from 'react'
+import {
+  Mail,
+  ExternalLink,
+  ArrowDown,
+  ChevronDown,
+  ChevronUp
+} from 'lucide-react'
  
 
 function App() {
+  const [isMessageOpen, setIsMessageOpen] = useState(false)
   return (
     <div>
 
@@ -237,31 +246,102 @@ function App() {
             Feel free to connect.
           </p>
 
-          <div className="contact-links">
+          <div className="contact-methods">
 
             <a
               href="https://www.linkedin.com/in/tonu-james"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card"
+              className="contact-method-card"
             >
+              <FaLinkedin
+              size={28}
+              className="contact-icon linkedin-icon"
+              aria-hidden="true"
+            />
               <h3>LinkedIn</h3>
+
               <p>Connect with me professionally</p>
+                  <span className="contact-card-action">
+                  Visit Profile
+                  <ExternalLink size={15} aria-hidden="true" />
+                </span>
             </a>
 
             <a
               href="https://github.com/tonu1990"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card"
+              className="contact-method-card"
             >
+          <FaGithub
+            size={28}
+            className="contact-icon github-icon"
+            aria-hidden="true"
+          />
+
               <h3>GitHub</h3>
               <p>Explore my projects and source code</p>
+                  <span className="contact-card-action">
+              View Repositories
+              <ExternalLink size={15} aria-hidden="true" />
+            </span>
             </a>
 
+             {/* Message Me — expandable form */}
+
+          <button
+            type="button"
+            className="contact-method-card message-method-button"
+            onClick={() => {
+              setIsMessageOpen(previous => !previous)
+            }}
+            aria-expanded={isMessageOpen}
+            aria-controls="message-form"
+          >
+
+            <Mail
+              size={28}
+              className="contact-icon message-icon"
+              aria-hidden="true"
+            />
+
+            <span className="contact-card-title">
+              Message Me
+            </span>
+
+            <span className="contact-card-description">
+              Send me a direct enquiry
+            </span>
+
+            <span className="contact-card-action">
+
+              {isMessageOpen ? 'Hide Contact Form' : 'Open Contact Form'}
+
+              {isMessageOpen ? (
+                <ChevronUp size={16} aria-hidden="true" />
+              ) : (
+                <ChevronDown size={16} aria-hidden="true" />
+              )}
+
+            </span>
+
+          </button>
+
           </div>
-          
-          <ContactForm />
+
+          {/* Expandable Contact Form */}
+
+          <div
+            id="message-form"
+            className="message-form-panel"
+            hidden={!isMessageOpen}
+          >
+
+            <ContactForm />
+
+          </div>
+
 
         </section>
 

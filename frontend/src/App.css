@@ -1209,3 +1209,307 @@ main section {
 .project-card:hover .project-tech-tag {
   background-color: #e8f1ff;
 }
+
+
+/* =========================================
+   7.17.6 - Compact Hero Section
+   ========================================= */
+
+.hero {
+  padding: 20px 0;
+  min-height: auto;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.85fr;
+  align-items: center;
+  gap: 30px;
+
+  max-width: 1080px;
+  padding: 12px 14px;
+  margin: 0 auto;
+}
+
+.hero-photo img {
+  width: 200px;
+  max-width: 100%;
+  height: 250px;
+
+  object-fit: cover;
+  object-position: center 35%;
+
+  border-radius: 20px;
+}
+
+/* Hero on mobile */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 16px 0;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 12px;
+  }
+
+  .hero-photo img {
+    width: 190px;
+    height: 238px;
+  }
+
+}
+
+
+/* =========================================
+   7.17.6 - Five Project Grid Layout
+   ========================================= */
+
+/* Desktop: 3 cards + 2 centred cards */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Each card occupies 2 of 6 columns */
+
+.projects-grid > .project-card {
+  grid-column: span 2;
+  height: 100%;
+}
+
+/* Centre fourth and fifth cards */
+
+.projects-grid > .project-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.projects-grid > .project-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+
+/* Tablet: 2 columns */
+
+@media (min-width: 701px) and (max-width: 1024px) {
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-grid > .project-card,
+  .projects-grid > .project-card:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .projects-grid > .project-card:nth-child(5) {
+    grid-column: 1 / -1;
+    width: calc((100% - 20px) / 2);
+    justify-self: center;
+  }
+
+}
+
+
+/* Mobile: 1 column */
+
+@media (max-width: 700px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .projects-grid > .project-card,
+  .projects-grid > .project-card:nth-child(4),
+  .projects-grid > .project-card:nth-child(5) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+}
+
+
+/* =====================================
+   Contact Cards - Three Column Layout
+   ===================================== */
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+  margin-bottom: 30px;
+}
+
+.contact-method-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 22px;
+
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+
+  text-decoration: none;
+  color: #0f172a;
+
+  min-width: 0;
+  min-height: 205px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-method-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.10);
+  transform: translateY(-3px);
+}
+
+.contact-method-card:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* Official social icons */
+
+.linkedin-icon {
+  color: #0a66c2;
+}
+
+.github-icon {
+  color: #24292f;
+}
+
+.message-icon {
+  color: #2563eb;
+}
+
+/* Card text */
+
+.contact-method-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 2px 0 0;
+  color: #0f172a;
+}
+
+.contact-method-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Action label at bottom */
+
+.contact-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: auto;
+  padding-top: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* Scroll positioning for contact form */
+
+#message-form {
+  scroll-margin-top: 90px;
+}
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .contact-methods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-method-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .contact-methods {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-method-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .contact-method-card:last-child {
+    grid-column: auto;
+  }
+}
+
+
+/* =====================================
+   Expandable Message Me Contact Card
+   ===================================== */
+
+.message-method-button {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Button title matching other contact cards */
+
+.contact-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2px;
+  color: #0f172a;
+}
+
+/* Button description */
+
+.contact-card-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+/* Highlight when form is open */
+
+.message-method-button[aria-expanded="true"] {
+  border-color: #60a5fa;
+  background-color: #f0f7ff;
+}
+
+/* Keep the hidden form completely hidden */
+
+#message-form[hidden] {
+  display: none;
+}
+
+/* Spacing around the expanded form */
+
+.message-form-panel {
+  margin-top: 15px;
+}
