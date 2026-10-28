@@ -1024,3 +1024,188 @@ main section {
   cursor: not-allowed;
 }
 
+
+/* Compact chatbot connection indicator */
+
+.chat-widget-connection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 5px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.chat-widget-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chat-widget-connection.checking .chat-widget-dot {
+  background: #d97706;
+}
+
+.chat-widget-connection.online .chat-widget-dot {
+  background: #16a34a;
+}
+
+.chat-widget-connection.offline .chat-widget-dot {
+  background: #dc2626;
+}
+
+/* Lucide close icon */
+
+.chat-widget-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Send button icon alignment */
+
+.chatbot-input-row button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+
+/* ===================================
+   Project Card Links
+   =================================== */
+
+/* Make project cards flexible vertically */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Container for links */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* Individual link */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 9px 12px;
+
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: background-color 0.2s;
+}
+
+.project-link:hover {
+  background: #dbeafe;
+}
+
+.project-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.project-link svg {
+  flex-shrink: 0;
+}
+
+
+/* =====================================
+   Project Card Title Styling
+   ===================================== */
+
+.project-card .project-title {
+  color: #1e3a8a;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  border-left: 4px solid #3b82f6;
+  padding-left: 11px;
+
+  margin: 0 0 18px;
+}
+
+
+/* Project description */
+
+.project-card .project-description {
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.65;
+
+  margin: 0 0 20px;
+}
+
+
+/* =====================================
+   Technology Tags
+   ===================================== */
+
+.project-tech-section {
+  margin-top: 5px;
+}
+
+.project-tech-label {
+  display: block;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+/* Container for all technology tags */
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* Individual technology tag */
+
+.project-tech-tag {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Slightly different appearance on hover */
+
+.project-card:hover .project-tech-tag {
+  background-color: #e8f1ff;
+}

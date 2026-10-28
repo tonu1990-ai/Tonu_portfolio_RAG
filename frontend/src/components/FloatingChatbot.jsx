@@ -1,18 +1,34 @@
 
 import { useState, useEffect } from 'react'
+import { X } from 'lucide-react'
 import Chatbot from './Chatbot.jsx'
+
+
+// Backend URL configured through Vite
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
 
 function FloatingChatbot() {
 
+  // Control whether the chatbot window is open
   const [isOpen, setIsOpen] = useState(false)
 
-  // Close chat when the visitor presses Escape
+  // Track the Render backend connection status
+  const [backendStatus, setBackendStatus] = useState('checking')
+
+
+  // ==========================================
+  // 1. Close chatbot using the Escape key
+  // ==========================================
+
   useEffect(() => {
 
     function handleKeyDown(event) {
+
       if (event.key === 'Escape') {
         setIsOpen(false)
       }
+
     }
 
     window.addEventListener('keydown', handleKeyDown)
@@ -24,17 +40,75 @@ function FloatingChatbot() {
   }, [])
 
 
+  // ==========================================
+  // 2. Wake up Render when the webpage loads
+  // ==========================================
+
+  useEffect(() => {
+
+    const controller = new AbortController()
+
+    async function checkBackend() {
+
+      if (!API_BASE_URL) {
+        setBackendStatus('offline')
+        return
+      }
+
+      try {
+
+        const response = await fetch(
+          `${API_BASE_URL}/health`,
+          {
+            signal: controller.signal
+          }
+        )
+
+        if (!response.ok) {
+          throw new Error('Backend health check failed')
+        }
+
+        if (!controller.signal.aborted) {
+          setBackendStatus('online')
+        }
+
+      } catch (error) {
+
+        if (!controller.signal.aborted) {
+          setBackendStatus('offline')
+        }
+
+      }
+
+    }
+
+    checkBackend()
+
+    // Cancel pending health check during cleanup
+    return () => controller.abort()
+
+  }, [])
+
+
+  // ==========================================
+  // 3. Display the floating chatbot
+  // ==========================================
+
   return (
+
     <div className="floating-chatbot">
 
       {/* Greeting bubble when chat is closed */}
       {!isOpen && (
+
         <div className="chat-greeting">
           Ask me for more details..!
         </div>
+
       )}
 
-      {/* Chat panel remains mounted even when hidden */}
+
+      {/* Chat panel stays mounted when hidden */}
       <div
         id="floating-chat-panel"
         className="chat-widget-panel"
@@ -43,10 +117,12 @@ function FloatingChatbot() {
         hidden={!isOpen}
       >
 
-        {/* Chat window heading */}
+        {/* Chatbot header */}
         <div className="chat-widget-header">
 
           <div className="chat-widget-title">
+
+            {/* Header avatar */}
             <img
               src="/tonu-avatar.png"
               alt=""
@@ -54,34 +130,74 @@ function FloatingChatbot() {
             />
 
             <div>
+
               <strong>Tonu's AI Assistant</strong>
-              <small>Ask about Tonu's background and projects</small>
+
+              {/* Compact server connection indicator */}
+              <div
+                className={`chat-widget-connection ${backendStatus}`}
+                role="status"
+              >
+
+                <span
+                  className="chat-widget-dot"
+                  aria-hidden="true"
+                ></span>
+
+                {backendStatus === 'checking' &&
+                  'Connecting...'}
+
+                {backendStatus === 'online' &&
+                  'Server connected'}
+
+                {backendStatus === 'offline' &&
+                  'Server unavailable'}
+
+              </div>
+
             </div>
+
           </div>
 
+
+          {/* Close button using Lucide icon */}
           <button
             type="button"
             className="chat-widget-close"
             onClick={() => setIsOpen(false)}
             aria-label="Close chatbot"
           >
-            ×
+
+            <X
+              size={20}
+              aria-hidden="true"
+            />
+
           </button>
 
         </div>
 
-        {/* Reuse our existing working chatbot */}
-        <Chatbot />
+
+        {/* Existing RAG chatbot component */}
+        <Chatbot
+          onChatSuccess={() => setBackendStatus('online')}
+        />
 
       </div>
 
-      {/* Floating avatar launcher */}
+
+      {/* ==================================
+          Floating chatbot avatar button
+          ================================== */}
+
       <button
         type="button"
         className="chat-avatar-launcher"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen(previous => !previous)}
         aria-label={
-          isOpen ? 'Close AI assistant' : 'Open AI assistant'
+          isOpen
+            ? 'Close AI assistant'
+            : 'Open AI assistant'
         }
         aria-expanded={isOpen}
         aria-controls="floating-chat-panel"
@@ -96,7 +212,9 @@ function FloatingChatbot() {
       </button>
 
     </div>
+
   )
+
 }
 
 export default FloatingChatbot
