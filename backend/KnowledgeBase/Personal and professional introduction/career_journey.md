@@ -1,51 +1,31 @@
-# Career Journey – Tonu James
+# Career Journey and Professional Transition — Tonu James
 
-## 2012–2014: Image Processing and Early AI Foundations
+## 2008–2014: Computer science and image-processing education
+Tonu completed a **Bachelor of Technology in Computer Science and Engineering** at College of Engineering Kidangoor (CUSAT-affiliated) in 2012. He then completed a **Master of Technology in Computer Science with Image Processing** at Cochin University of Science and Technology in 2014. His M.Tech research addressed encrypted video steganography; an associated publication was reported in 2014.
 
-After completing his B.Tech in Computer Science and Engineering in 2012, Tonu James pursued an M.Tech in Computer Science with Image Processing at CUSAT.
+## December 2014–November 2015: Tata Consultancy Services
+Tonu worked as an **Associate Developer** at TCS India, contributing Java application development to financial risk-reporting-related work for a Credit Suisse investment-banking project.
 
-His postgraduate work included image processing, artificial neural network concepts, and video steganography research published in 2014.
+## December 2015–August 2023: SAP Labs India
+Tonu worked as a **Software Developer**, developing and supporting SAP CRM, SAP PLM and integration-related enterprise applications. His customers/projects included work associated with RBC, Standard Bank of South Africa and Tetra Pak. He served as technical lead for a four-member team supporting the SAP Multi-Bank Connectivity Connector for over 100 customer organisations.
 
-## 2014–2015: Beginning a Professional Software Career
+During SAP employment, Tonu also explored small AI proof-of-concept ideas such as YOLO-based bird-nest detection, few-shot retail product matching and image processing for handwritten numbers. These were exploratory projects, not commercial AI product deployments.
 
-Tonu began his enterprise software career at Tata Consultancy Services in December 2014.
+## September 2023–2025: MSc in Human-Centred AI in Ireland
+Tonu undertook the **Master of Science in Human-Centred Artificial Intelligence** at Technological University Dublin, completed in 2025 with **Second Class Honours**.
 
-As an Associate Developer on a Credit Suisse Investment Bank-related project, he worked with Java and interactive financial risk reporting involving live-streaming data.
+His thesis evaluated regional and demographic disparities in a YOLOX pedestrian detector, including creation and annotation of Indian-condition pedestrian imagery. Other studies included Dublin footfall time-series forecasting and a Siamese/KNN face-similarity project linked to an ACM conference poster in 2024.
 
-His TCS employment ended in November 2015.
+From March to May 2024, he worked part-time as a **Software Development Lab Assistant** at TU Dublin, supporting second-year undergraduate Python/OOP practical sessions.
 
-## 2015–2023: SAP Enterprise Engineering and Leadership
+## 2025–2026: Hands-on AI engineering and portfolio development
+Following completion of his MSc, Tonu has focused on developing and deploying practical AI applications while preparing for opportunities in applied AI.
 
-From December 2015 through August 2023, Tonu worked as a Software Developer at SAP Labs India.
+- Developed a public professional portfolio with a **working RAG chatbot**, deployed using Vercel and Render: https://tonu-james.vercel.app/
+- Designed a reusable **Raspberry Pi 5 ONNX model and Docker application CD framework** using GitHub Actions with a self-hosted runner, and demonstrated it through a deployed **GStreamer/PySide6/YOLO object-detection GUI**.
+- Continued learning GenAI orchestration, LangChain, Edge AI optimisation and deployment-oriented engineering.
 
-He developed and supported SAP CRM and PLM applications and worked with SAP ABAP, CRM Web UI, BRF+, and OData integrations.
+These recent AI activities should be described as academic projects, personal implementations or learning as appropriate, not as formal commercial AI employment.
 
-His project experience included banking-related applications associated with RBC and SBSA and a PLM/data-migration assignment for Tetra Pak.
-
-He also served as official team lead for a four-member group supporting the SAP Multi-Bank Connectivity Connector for more than 100 customer organizations.
-
-While at SAP Labs, Tonu explored AI through independent learning and small proof-of-concept experiments involving object detection, few-shot learning, and image processing.
-
-This work was exploratory rather than a record of deployed production AI products.
-
-## 2023–2025: MSc in Human-Centred AI
-
-Tonu pursued an MSc in Human-Centred Artificial Intelligence at TU Dublin from September 2023 to February 2025.
-
-His studies combined technical AI topics with fairness, ethics, and human-centred considerations.
-
-His research examined geographical bias in pedestrian detection across Indian and European conditions.
-
-Between March and May 2024, he also worked part-time as a Software Development Lab Assistant at TU Dublin, supporting Python programming exercises for undergraduates.
-
-## 2025 Onward: Career Interruption and AI Engineering Transition
-
-Following the completion of his MSc in February 2025, Tonu's planned job transition was delayed by family caregiving responsibilities.
-
-He is now focused on restarting his professional career in Ireland through AI projects, technical learning, and applications for AI engineering opportunities.
-
-His recent hands-on achievements include a fully deployed and operational personal portfolio RAG chatbot and a functioning Raspberry Pi Edge AI application with camera preview, YOLO inference, detection display, and Docker deployment.
-
-He continues learning agentic workflows, full-stack AI integration, and deployment-oriented engineering.
-
-He is equally open to Generative AI, Computer Vision/Edge AI, and Enterprise AI/SAP Generative AI opportunities.
+## Current professional goal
+Tonu is seeking work where he can combine software engineering experience with more recent AI knowledge and applied research. His principal interests cover Generative AI/LLM applications, Computer Vision/Edge AI and Enterprise AI integration.
